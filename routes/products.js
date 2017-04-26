@@ -7,7 +7,7 @@ router.get('/', function (request, response, next){
   Product
     .findAll()
     .then(function(products){
-      response.send(products);
+      response.render('products/index', { products:products });
     })
 })
 
