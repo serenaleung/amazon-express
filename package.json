@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "debug": "nodemon --inspect ./bin/www"
+    "debug": "nodemon --inspect ./bin/www",
+    "db:create": "createdb --echo ae_development",
+    "db:drop": "dropdb --echo ae_development"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
