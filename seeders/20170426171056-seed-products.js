@@ -15,7 +15,7 @@ module.exports = {
           title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
           description: faker.hacker.phrase(),
           price: faker.commerce.price()
-        })
+        }).catch(function (e) { console.log('Duplicate') })
       })
     return Promise.all(products);
     /*
