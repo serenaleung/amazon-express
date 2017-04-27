@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/index').Product;
+const reviews = require('./reviews');
 
 router.get('/', function (request, response, next){
   // response.send('Stuff');
@@ -39,5 +40,7 @@ router.post('/', function (req, res) {
     res.redirect('/products');
   })
 })
+
+router.use('/:productId/reviews', reviews);
 
 module.exports = router;

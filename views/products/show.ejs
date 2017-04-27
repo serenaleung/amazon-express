@@ -5,4 +5,16 @@
 <p><%= product.description %></p>
 <p><strong>Create At: </strong><%= product.createdAt %></p>
 
+<h2>Reviews</h2>
+
+<form action="/products/<%= product.id %>/reviews" method="post">
+  <div>
+    <textarea id="content" name="content"></textarea>
+  </div>
+  <div>
+    <input id="rating" name="rating"/>
+  </div>
+  <input type="submit" name="submit" value="Submit"/>
+</form>
+
 <%- include('../partials/footer') %>
