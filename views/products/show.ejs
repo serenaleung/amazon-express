@@ -17,4 +17,14 @@
   <input type="submit" name="submit" value="Submit"/>
 </form>
 
+<ul class="answers-list">
+  <% for (let review of reviews) { %>
+    <li>
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
+      <p><strong>Created At: <%= review.createdAt %></strong></p>
+    </li>
+    <% } %>
+</ul>
+
 <%- include('../partials/footer') %>
