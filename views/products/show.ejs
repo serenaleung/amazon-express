@@ -5,6 +5,11 @@
 <p><%= product.description %></p>
 <p><strong>Create At: </strong><%= product.createdAt %></p>
 
+<form action="/products/<%= product.id %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="Delete"/>
+</form>
+
 <h2>Reviews</h2>
 
 <form action="/products/<%= product.id %>/reviews" method="post">

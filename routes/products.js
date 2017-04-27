@@ -44,6 +44,16 @@ router.post('/', function (req, res) {
   })
 })
 
+// Products#destroy URL: /products/:id VERB: DELETE
+router.delete('/:id', function(req, res) {
+  const id = req.params.id;
+
+  Product
+  .findById(id)
+  .then(function(product) {return product.destroy()})
+  .then(function() {res.redirect('/products')});
+})
+
 router.use('/:productId/reviews', reviews);
 
 module.exports = router;
